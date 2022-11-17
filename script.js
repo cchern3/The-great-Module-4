@@ -1,3 +1,4 @@
+// creating an array for the questions/answers
 var questions = [
     {
       question: "Commonly used data types DO NOT include:",
@@ -31,80 +32,81 @@ var questions = [
 
   ];
   
+  //list variables to start corresponding functions of the score and time
   var score = 0;
-  var questionList = 0;
+  var questl = 0;
   var Time = document.querySelector("#Time");
   var starttimer = document.querySelector("#startbtn");
   var qcontainer = document.querySelector("#qcontainer");
   var everything = document.querySelector("#everything");
   
-  //Creating the Timer
+  //Timer parameters
   var timelimit = 90;
-  var holdInterval = 0;
+  var timeint = 0;
   var penalty = 15;
-  var ulCreate = document.createElement("ul");
+  var varunlist = document.createElement("ul");
   
+  //timer display
   starttimer.addEventListener("click", function () {
-    if (holdInterval === 0) {
-      holdInterval = setInterval(function () {
+    if (timeint === 0) {
+      timeint = setInterval(function () {
         timelimit--;
         Time.textContent = "Time Left: " + timelimit;
   
         if (timelimit <= 0) {
-          clearInterval(holdInterval);
-          allDone();
+          clearInterval(timeint);
+          end();
           Time.textContent = "Time's up!";
         }
       }, 1000);
-    }
-    render(questionList);
+    } make(questl);
   });
   
-  //create a function so that the list of questions runs on start
-  function render(questionList) {
+  //function to begin the quiz
+  function make(questl) {
     qcontainer.innerHTML = "";
-    ulCreate.innerHTML = "";
+    varunlist.innerHTML = "";
     for (var i = 0; i < questions.length; i++) {
-      var userQuestion = questions[questionList].question;
-      var userChoices = questions[questionList].answerchoices;
+      var userQuestion = questions[questl].question;
+      var userChoices = questions[questl].answerchoices;
       qcontainer.textContent = userQuestion;
     }
     userChoices.forEach(function (newItem) {
       var listItem = document.createElement("li");
       listItem.textContent = newItem;
-      qcontainer.appendChild(ulCreate);
-      ulCreate.appendChild(listItem);
-      listItem.addEventListener("click", compare);
+      qcontainer.appendChild(varunlist);
+      varunlist.appendChild(listItem);
+      listItem.addEventListener("click", com);
     });
   }
   //create a function that will compare user answer to the correct answer
-  function compare(event) {
+  function com(event) {
     var element = event.target;
     if (element.matches("li")) {
-      var createDiv = document.createElement("div");
-      createDiv.setAttribute("id", "createDiv");
-      if (element.textContent == questions[questionList].answer) {
+      var elementd = document.createElement("div");
+      elementd.setAttribute("id", "cont2");
+      if (element.textContent == questions[questl].answer) {
         score++;
-        createDiv.textContent = "Correct!";
+        elementd.textContent = "Correct!";
       } else {
         timelimit = timelimit - penalty;
-        createDiv.textContent = "Wrong!";
+        elementd.textContent = "Wrong!";
       }
     }
   
-    questionList++;
+    questl++;
   
-    if (questionList >= questions.length) {
-      allDone();
-      createDiv.textContent = "End of quiz!" + " " + "You got  " + score + " out of " + questions.length + " correct!";
+    if (questl >= questions.length) {
+      end();
+      elementd.textContent = "End of quiz!" + " " + "You got  " + score + " out of " + questions.length + " correct!";
     } else {
-      render(questionList);
+      make(questl);
     }
-    qcontainer.appendChild(createDiv);
+    qcontainer.appendChild(elementd);
   }
   
-  //This is the end of the quiz
-  function allDone() {
+  //Finishing up the quiz
+  function end() {
     qcontainer.innerHTML = "";
     Time.innerHTML = "";
   
@@ -114,12 +116,12 @@ var questions = [
   
     qcontainer.appendChild(Hone);
   
-    // Stops timer and uses the number as a score
+    // score of the time remaining after the timer ends
     if (timelimit >= 0) {
-      var timeRemaining = timelimit;
+      var remaining = timelimit;
       var createP = document.createElement("p");
-      clearInterval(holdInterval);
-      createP.textContent = "Your final score is: " + timeRemaining;
+      clearInterval(timeint);
+      createP.textContent = "Your final score is: " + remaining;
   
       qcontainer.appendChild(createP);
     }
@@ -130,30 +132,30 @@ var questions = [
   
     qcontainer.appendChild(labelone);
   
-    var createInput = document.createElement("input");
-    createInput.setAttribute("type", "text");
-    createInput.setAttribute("id", "initials");
-    createInput.textContent = "";
+    var text1 = document.createElement("input");
+    text1.setAttribute("type", "text");
+    text1.setAttribute("id", "init");
+    text1.textContent = "";
   
-    qcontainer.appendChild(createInput);
+    qcontainer.appendChild(text1);
   
-    var createSubmit = document.createElement("button");
-    createSubmit.setAttribute("class", "submitbtn");
-    createSubmit.setAttribute("type", "submit");
-    createSubmit.textContent = "Submit";
+    var submitb = document.createElement("button");
+    submitb.setAttribute("class", "submitbtn");
+    submitb.setAttribute("type", "submit");
+    submitb.textContent = "Submit";
   
-    qcontainer.appendChild(createSubmit);
+    qcontainer.appendChild(submitb);
   
     // creating a local storage for the scores
-    createSubmit.addEventListener("click", function () {
-      var init = createInput.value;
+    submitb.addEventListener("click", function () {
+      var init = text1.value;
   
       if (!init) {
         window.alert("No value entered!");
       } else {
         var finalScore = {
-          initials: init,
-          score: timeRemaining,
+          init: init,
+          score: remaining,
         };
 
         var everyscore = localStorage.getItem("everyscore");

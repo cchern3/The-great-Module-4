@@ -24,5 +24,3 @@ backbtn.addEventListener("click", function () {
   window.location.replace("index.html");
 });
 
-//ranking the scores 
-topscore.sort((a,b) => {return b.score-a.score});

@@ -105,7 +105,7 @@ var questions = [
     qcontainer.appendChild(elementd);
   }
   
-  //Finishing up the quiz
+  // User ending of the quiz
   function end() {
     qcontainer.innerHTML = "";
     Time.innerHTML = "";

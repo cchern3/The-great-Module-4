@@ -24,5 +24,5 @@ backbtn.addEventListener("click", function () {
   window.location.replace("index.html");
 });
 
-//ranks the scores 
+//ranking the scores 
 topscore.sort((a,b) => {return b.score-a.score});

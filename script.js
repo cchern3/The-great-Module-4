@@ -149,7 +149,7 @@ var questions = [
   
     qcontainer.appendChild(submitb);
   
-    // creating a local storage for the scores
+    // creating a local storage for the scores of the user
     submitb.addEventListener("click", function () {
       var init = text1.value;
   

@@ -175,7 +175,7 @@ var questions = [
 
         localStorage.setItem("everyscore", JSON.stringify(everyscore));
 
-        window.location.replace("highScores.html");
+        window.location.replace("highscores.html");
       }
     });
   }

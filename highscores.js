@@ -5,7 +5,7 @@ var backbtn = document.querySelector("#backbtn");
 var everyscore = localStorage.getItem("everyscore");
 everyscore = JSON.parse(everyscore);
 
-//creating a clear button to get rid of all scores
+//creating a clear button to remove of all scores
 clearbtn.addEventListener("click", function () {
   localStorage.clear();
   location.reload();
@@ -24,5 +24,5 @@ backbtn.addEventListener("click", function () {
   window.location.replace("index.html");
 });
 
-//ranks the scores 
+//ranking the scores 
 topscore.sort((a,b) => {return b.score-a.score});

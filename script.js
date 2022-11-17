@@ -105,7 +105,7 @@ var questions = [
     qcontainer.appendChild(elementd);
   }
   
-  //Finishing up the quiz
+  // User ending of the quiz
   function end() {
     qcontainer.innerHTML = "";
     Time.innerHTML = "";
@@ -149,7 +149,7 @@ var questions = [
   
     qcontainer.appendChild(submitb);
   
-    // creating a local storage for the scores
+    // creating a local storage for the scores of the user
     submitb.addEventListener("click", function () {
       var init = text1.value;
   
@@ -169,7 +169,7 @@ var questions = [
           everyscore = JSON.parse(everyscore);
         }
         everyscore.push(finalScore);
-        //sorting the scores to make them in order of ranking
+        //sorting the scores to make them in order of rankings
         everyscore.sort((a,b) => {return b.score-a.score});
 
 

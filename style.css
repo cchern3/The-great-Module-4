@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+h1 {
+  text-align: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 a {
   text-decoration: none;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -17,10 +22,6 @@ a:hover {
   transition-duration: 2s;
 }
 
-h1 {
-  text-align: center;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
 
 p {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -29,6 +30,7 @@ p {
 
 button {
   border-radius: 90px;
+  border: 1px solid black;
 }
 
 label {
@@ -36,23 +38,15 @@ label {
   font-weight: bold;
 }
 
-input {
-  width: 30%;
-  padding: 2px 2px;
-  margin-bottom: 20px;
-  border: 0.5px solid rgb(14, 13, 13);
-  border-radius:30px;
-}
-
 
 li {
-  background-color: rgb(231, 124, 223);
   margin-top: 15px;
-  padding: 5px 15px;
-  width: 80%;
-  font-size: 14px;
   color: rgb(22, 20, 20);
+  width: 70%;
+  font-size: 14px;
   border: 1px solid rgb(89, 41, 95);
+  padding: 4px 17px;
+  background-color: rgb(231, 124, 223);
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   border-radius: 50px;
  
@@ -64,17 +58,25 @@ li {
 
 #everything {
   position: absolute;
-  left: 30%;
-  top: 20%;
-  width: 600px;
+  left: 430px;
   height: 400px;
+  width: 600px;
+  top: 100px;
+}
+
+input {
+  width: 30%;
+  padding: 2px 2px;
+  margin-bottom: 20px;
+  border: 0.5px solid rgb(14, 13, 13);
+  border-radius:30px;
 }
 
 #startbtn {
   background-color: rgb(231, 124, 223);
-  margin-left: 33%;
+  font-size: 23px;
   padding: 15px 32px;
-  font-size: 20px;
+  margin-left: 190px;
   color: white;
 }
 
@@ -94,13 +96,13 @@ cursor: pointer;
 }
 
 #cont2 {
-  margin-top: 20px;
-  border-top: 1px solid lightgray;
+  border-top: 1px dashed lightgray;
+  margin-top: 42px;
 }
 
 #Time {
-  float: right;
   font-weight: bold;
+  float: right;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -120,12 +122,10 @@ cursor: pointer;
 }
 
 #clearbtn {
-  background-color:rgb(231, 124, 147);
-  position: relative;
-  padding: 7px;
   font-size: 20px;
   color: rgb(18, 16, 16);
-  right: 5%;
+  background-color:rgb(231, 124, 147);
+  padding: 7px;
   cursor: pointer;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -135,13 +135,13 @@ cursor: pointer;
 }
 
 .submitbtn {
-  background-color:rgb(231, 124, 223);
+  cursor: pointer;
   margin-left: 36%;
-  padding: 5px 25px;
+  background-color:rgb(231, 124, 223);
   font-size: 27px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: beige;
-  cursor: pointer;
+  padding: 5px 25px;
 }
 
 .submitbtn:hover {

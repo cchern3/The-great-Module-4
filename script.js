@@ -126,12 +126,14 @@ var questions = [
       qcontainer.appendChild(createP);
     }
   
+    // making a label 
     var labelone = document.createElement("label");
     labelone.setAttribute("id", "createLabel");
     labelone.textContent = "Enter your initials: ";
   
     qcontainer.appendChild(labelone);
   
+    //making a textbox to allow users to input their initials
     var text1 = document.createElement("input");
     text1.setAttribute("type", "text");
     text1.setAttribute("id", "init");
@@ -139,6 +141,7 @@ var questions = [
   
     qcontainer.appendChild(text1);
   
+    //creating a submit button at the end of the quiz
     var submitb = document.createElement("button");
     submitb.setAttribute("class", "submitbtn");
     submitb.setAttribute("type", "submit");

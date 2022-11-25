@@ -170,7 +170,7 @@ var questions = [
         }
         everyscore.push(finalScore);
         //sorting the scores to make them in order of rankings
-        everyscore.sort((a,b) => {return b.score-a.score});
+    
 
 
         localStorage.setItem("everyscore", JSON.stringify(everyscore));

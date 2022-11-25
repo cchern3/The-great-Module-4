@@ -11,7 +11,7 @@ clearbtn.addEventListener("click", function () {
   location.reload();
 });
 
-//this shows that every there is nothing undefined then the score will be shown on the highscore display
+//this shows that every there is nothing undefined then the score will be shown on the highscore 
 if (everyscore !== null) {
   for (var i = 0; i < everyscore.length; i++) {
     var lione = document.createElement("li");
